@@ -19,7 +19,7 @@ function findModifier(stat) {
     } else { alert("Tu modificador de " + stat + " es " + Math.floor((statNumber - 10) / 2)) }
 }
 
-/* Introducción */
+/* Introducción y ciclo */
 
 alert("Bienvenido a este calculador de stats de D&D 5e");
 let askingStat = prompt("Selecciona el modificador de stat que deseas calcular\n 1-Fuerza \n 2-Destreza \n 3-Constitución \n 4-Inteligencia \n 5-Sabiduría \n 6-Carisma \n\n O escribe ESC para salir")
