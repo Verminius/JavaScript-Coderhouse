@@ -22,10 +22,10 @@ function findModifier(stat) {
 /* Introducción y ciclo */
 
 alert("Bienvenido a este calculador de stats de D&D 5e");
-let askingStat = parseInt(prompt("Selecciona el modificador de stat que deseas calcular\n 1-Fuerza \n 2-Destreza \n 3-Constitución \n 4-Inteligencia \n 5-Sabiduría \n 6-Carisma \n\n O escribe ESC para salir"))
+let askingStat = parseInt(prompt("Selecciona el modificador de stat que deseas calcular\n 1-Fuerza \n 2-Destreza \n 3-Constitución \n 4-Inteligencia \n 5-Sabiduría \n 6-Carisma \n\n 0- Salir"))
 
 
-while (askingStat != "ESC") {
+while (askingStat != "0") {
     if (askingStat == 1) {
         findModifier(strText)
     } else if (askingStat == 2) {
@@ -42,6 +42,6 @@ while (askingStat != "ESC") {
         alert("Ingresa una opción válida")
     }
 
-    askingStat = prompt("Selecciona el modificador de stat que deseas calcular\n 1-Fuerza \n 2-Destreza \n 3-Constitución \n 4-Inteligencia \n 5-Sabiduría \n 6-Carisma \n\n O escribe ESC para salir")
+    askingStat = parseInt(prompt("Selecciona el modificador de stat que deseas calcular\n 1-Fuerza \n 2-Destreza \n 3-Constitución \n 4-Inteligencia \n 5-Sabiduría \n 6-Carisma \n\n 0- Salir"))
 
 }
