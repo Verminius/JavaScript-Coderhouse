@@ -1,4 +1,5 @@
 // Objeto Personaje
+
 class Personaje {
     constructor(nombre, clase, raza, fuerza, destreza, constitucion, inteligencia, sabiduria, carisma) {
         this.nombre = nombre;
@@ -12,39 +13,53 @@ class Personaje {
         this.carisma = carisma;
     }
 
-    calcularModFuerza() {
-        Math.floor((this.fuerza - 10) / 2);
+    // Métodos 
+    calcularModificador(estadistica) {
+        return Math.floor((estadistica - 10) / 2);
     }
-};
+
+    calcularAc() {
+        return 10 + this.calcularModificador(this.destreza)
+    }
+
+
+}
+
+
 
 // Solicitar info
 
-let personaje1 = new Personaje(
-    prompt("Ingresa el nombre de tu personaje:"),
-    prompt("Ingresa la clase de tu personaje:"),
-    prompt("Ingresa la raza de tu personaje:"),
-    parseInt(prompt("Ingresa la estadística de Fuerza:")),
-    parseInt(prompt("Ingresa la estadística de Destreza:")),
-    parseInt(prompt("Ingresa la estadística de Constitución:")),
-    parseInt(prompt("Ingresa la estadística de Inteligencia:")),
-    parseInt(prompt("Ingresa la estadística de Sabiduría:")),
-    parseInt(prompt("Ingresa la estadística de Carisma:")),
-)
+var nombre = prompt("Ingresa el nombre de tu personaje:");
+var clase = prompt("Escoje una clase: \n- Barbaro \n- Bardo \n- Brujo \n- Clérigo \n- Druida \n- Explorador \n- Guerrero \n- Hechicero \n- Mago \n- Monje \n- Paladin \n- Picaro");
+var raza = prompt("Escoje una raza: \n- Enano \n- Elfo \n- Mediano \n- Humano \n- Dracónido \n- Gnomo \n- Semielfo \n- Semiorco \n- Tiflin");
+var fuerza = parseInt(prompt("Ingresa la Fuerza de tu personaje:"));
+var destreza = parseInt(prompt("Ingresa la Destreza de tu personaje:"));
+var constitucion = parseInt(prompt("Ingresa la Constitución de tu personaje:"));
+var inteligencia = parseInt(prompt("Ingresa la Inteligencia de tu personaje:"));
+var sabiduria = parseInt(prompt("Ingresa la Sabiduría de tu personaje:"));
+var carisma = parseInt(prompt("Ingresa la Carisma de tu personaje:"));
 
 
 
-// Ver hoja de personaje
-var mensaje = "Datos del personaje:\n\n";
-mensaje += "Nombre: " + personaje1.nombre + "\n";
-mensaje += "Clase: " + personaje1.clase + "\n";
-mensaje += "Raza: " + personaje1.raza + "\n\n";
-mensaje += "Estadísticas:\n";
-mensaje += "Fuerza: " + personaje1.fuerza + "\n";
-mensaje += "Modificador: " + personaje1.calcularModFuerza() + "\n";
-mensaje += "Destreza: " + personaje1.destreza + "\n";
-mensaje += "Constitución: " + personaje1.constitucion + "\n";
-mensaje += "Inteligencia: " + personaje1.inteligencia + "\n";
-mensaje += "Sabiduría: " + personaje1.sabiduria + "\n";
-mensaje += "Carisma: " + personaje1.carisma + "\n";
+// Crear un personaje
 
-alert(mensaje);
+var personaje = new Personaje(nombre, clase, raza, fuerza, destreza, constitucion, inteligencia, sabiduria, carisma);
+
+
+
+// Hoja de Personaje
+
+var hojaDePersonaje = "Datos del personaje:\n\n";
+hojaDePersonaje += "Nombre: " + personaje.nombre + "\n";
+hojaDePersonaje += "Clase: " + personaje.clase + "\n";
+hojaDePersonaje += "Raza: " + personaje.raza + "\n\n";
+hojaDePersonaje += "Estadísticas:\n";
+hojaDePersonaje += "Fuerza: " + personaje.fuerza + " (Modificador: " + personaje.calcularModificador(personaje.fuerza) + ")\n";
+hojaDePersonaje += "Destreza: " + personaje.destreza + " (Modificador: " + personaje.calcularModificador(personaje.destreza) + ")\n";
+hojaDePersonaje += "Constitución: " + personaje.constitucion + " (Modificador: " + personaje.calcularModificador(personaje.constitucion) + ")\n";
+hojaDePersonaje += "Inteligencia: " + personaje.inteligencia + " (Modificador: " + personaje.calcularModificador(personaje.inteligencia) + ")\n";
+hojaDePersonaje += "Sabiduría: " + personaje.sabiduria + " (Modificador: " + personaje.calcularModificador(personaje.sabiduria) + ")\n";
+hojaDePersonaje += "Carisma: " + personaje.carisma + " (Modificador: " + personaje.calcularModificador(personaje.carisma) + ")\n\n";
+hojaDePersonaje += "Clase de Armadura:" + personaje.calcularAc();
+
+alert(hojaDePersonaje);
