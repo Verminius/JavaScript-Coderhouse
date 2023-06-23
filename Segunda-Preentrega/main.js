@@ -1,3 +1,35 @@
+// Dados
+const dados = [4, 6, 8, 10, 12, 20]
+
+
+// Funciones
+function lanzarDado(dado) {
+    let lanzar = Math.floor((Math.random() * dado) + 1)
+    return lanzar
+}
+
+function calcularStat() {
+    let sumaD6 = [lanzarDado(dados[1]),
+        lanzarDado(dados[1]),
+        lanzarDado(dados[1]),
+        lanzarDado(dados[1]),
+    ]
+
+    sumaD6.sort((a, b) => a - b)
+        // console.log(sumaD6)
+
+    sumaD6.shift(0)
+        // console.log(sumaD6)
+
+    let total = sumaD6.reduce((acc, num) => {
+        return acc + num;
+    })
+
+    return total
+        // console.log(total)
+}
+
+
 // Objeto Personaje
 
 class Personaje {
@@ -19,37 +51,27 @@ class Personaje {
     }
 
     calcularAc() {
-        return 10 + this.calcularModificador(this.destreza)
+        return 10 + this.calcularModificador(this.destreza);
     }
-
-
-}
+};
 
 
 
 // Solicitar info
 
-var nombre = prompt("Ingresa el nombre de tu personaje:");
-var clase = prompt("Escoje una clase: \n- Barbaro \n- Bardo \n- Brujo \n- Clérigo \n- Druida \n- Explorador \n- Guerrero \n- Hechicero \n- Mago \n- Monje \n- Paladin \n- Picaro");
-var raza = prompt("Escoje una raza: \n- Enano \n- Elfo \n- Mediano \n- Humano \n- Dracónido \n- Gnomo \n- Semielfo \n- Semiorco \n- Tiflin");
-var fuerza = parseInt(prompt("Ingresa la Fuerza de tu personaje:"));
-var destreza = parseInt(prompt("Ingresa la Destreza de tu personaje:"));
-var constitucion = parseInt(prompt("Ingresa la Constitución de tu personaje:"));
-var inteligencia = parseInt(prompt("Ingresa la Inteligencia de tu personaje:"));
-var sabiduria = parseInt(prompt("Ingresa la Sabiduría de tu personaje:"));
-var carisma = parseInt(prompt("Ingresa la Carisma de tu personaje:"));
-
+let nombre = prompt("Ingresa el nombre de tu personaje:");
+let clase = prompt("Escoje una clase: \n- Barbaro \n- Bardo \n- Brujo \n- Clérigo \n- Druida \n- Explorador \n- Guerrero \n- Hechicero \n- Mago \n- Monje \n- Paladin \n- Picaro");
+let raza = prompt("Escoje una raza: \n- Enano \n- Elfo \n- Mediano \n- Humano \n- Dracónido \n- Gnomo \n- Semielfo \n- Semiorco \n- Tiflin");
 
 
 // Crear un personaje
 
-var personaje = new Personaje(nombre, clase, raza, fuerza, destreza, constitucion, inteligencia, sabiduria, carisma);
-
+let personaje = new Personaje(nombre, clase, raza, calcularStat(), calcularStat(), calcularStat(), calcularStat(), calcularStat(), calcularStat());
 
 
 // Hoja de Personaje
 
-var hojaDePersonaje = "Datos del personaje:\n\n";
+let hojaDePersonaje = "Datos del personaje:\n\n";
 hojaDePersonaje += "Nombre: " + personaje.nombre + "\n";
 hojaDePersonaje += "Clase: " + personaje.clase + "\n";
 hojaDePersonaje += "Raza: " + personaje.raza + "\n\n";
