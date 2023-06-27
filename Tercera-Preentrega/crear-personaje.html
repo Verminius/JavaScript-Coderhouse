@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crea tu personaje</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- header -->
+    <header class="container-extremo">
+        <h1> Hoja de personaje de D&D </h1>
+    </header>
+
+    <!-- main -->
+    <div class="container">
+        <form class="personaje-form">
+            <p>Nombre de tu personaje</p>
+            <section>
+                <input type="text" id="char-name" placeholder="nombre">
+            </section>
+
+            <p>Escoje tu raza</p>
+            <div class="seleccion">
+                <div class="choice">
+                    <input type="radio" id="humanmo" name="raza" class="raza" value="humano">
+                    <label for="humanmo">Humano</label>
+                </div>
+                <div class="choice">
+                    <input type="radio" id="enano" name="raza" class="raza" value="enano">
+                    <label for="enano">Enano</label>
+                </div>
+                <div class="choice">
+                    <input type="radio" id="elfo" name="raza" class="raza" value="elfo">
+                    <label for="elfo">Elfo</label>
+                </div>
+            </div>
+
+
+            <p>Escoje tu clase</p>
+            <div class="seleccion">
+                <div class="choice">
+                    <input type="radio" id="guerrero" name="clase" class="clase" value="guerrero">
+                    <label for="guerrero">Guerrero</label>
+                </div>
+                <div class="choice">
+                    <input type="radio" id="mago" name="clase" class="clase" value="mago">
+                    <label for="mago">Mago</label>
+                </div>
+                <div class="choice">
+                    <input type="radio" id="clerigo" name="clase" class="clase" value="clerigo">
+                    <label for="clerigo">Clerigo</label>
+                </div>
+            </div>
+
+
+            <p>Escoje tus estadisticas</p>
+            <div class="seleccion stats">
+                <div class="stat-container">
+                    <div class="number">0</div>
+                    <button onclick="calcularStat()">lanza los dados</button>
+                    <select name="stats" class="stat-choice">
+                        <option value="Fuerza">Fuerza</option>
+                        <option value="Destreza">Destreza</option>
+                        <option value="Constitución">Constitución</option>
+                        <option value="Inteligencia">Inteligencia</option>
+                        <option value="Sabiduría">Sabiduría</option>
+                        <option value="Carisma">Carisma</option>
+                    </select>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+
+
+    </form>
+    </div>
+
+    <!-- footer -->
+    <footer class="container-extremo">
+        <h5>Creado por: Alexander Patiño</h5>
+    </footer>
+
+    <!-- script -->
+    <script src="/Tercera-Preentrega/main.js"></script>
+    <script src="/Tercera-Preentrega/objetos.js"></script>
+
+
+</body>
+
+</html>
