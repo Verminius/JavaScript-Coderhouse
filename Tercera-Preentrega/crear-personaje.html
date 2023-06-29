@@ -19,58 +19,78 @@
         <form class="personaje-form">
             <p>Nombre de tu personaje</p>
             <section>
-                <input type="text" id="char-name" placeholder="nombre">
+                <input type="text" id="char-name" placeholder="nombre" class="input">
             </section>
 
             <p>Escoje tu raza</p>
             <div class="seleccion">
-                <div class="choice">
-                    <input type="radio" id="humanmo" name="raza" class="raza" value="humano">
-                    <label for="humanmo">Humano</label>
-                </div>
-                <div class="choice">
-                    <input type="radio" id="enano" name="raza" class="raza" value="enano">
-                    <label for="enano">Enano</label>
-                </div>
-                <div class="choice">
-                    <input type="radio" id="elfo" name="raza" class="raza" value="elfo">
-                    <label for="elfo">Elfo</label>
-                </div>
+                <ul>
+                    <li>Humano</li>
+                    <li>Elfo</li>
+                    <li>Enano</li>
+                </ul>
+                <input class="input" type="text" placeholder="Escribe tu Raza" id="raza">
             </div>
 
 
             <p>Escoje tu clase</p>
             <div class="seleccion">
-                <div class="choice">
-                    <input type="radio" id="guerrero" name="clase" class="clase" value="guerrero">
-                    <label for="guerrero">Guerrero</label>
-                </div>
-                <div class="choice">
-                    <input type="radio" id="mago" name="clase" class="clase" value="mago">
-                    <label for="mago">Mago</label>
-                </div>
-                <div class="choice">
-                    <input type="radio" id="clerigo" name="clase" class="clase" value="clerigo">
-                    <label for="clerigo">Clerigo</label>
-                </div>
+                <ul>
+                    <li>Guerrero</li>
+                    <li>Mago</li>
+                    <li>Clérigo</li>
+                </ul>
+                <input class="input" type="text" placeholder="Escribe tu Clase" id="clase">
             </div>
 
 
             <p>Escoje tus estadisticas</p>
-            <div class="seleccion stats">
+            <div class="seleccion">
                 <div class="stat-container">
-                    <div class="number">0</div>
-                    <button onclick="calcularStat()">lanza los dados</button>
-                    <select name="stats" class="stat-choice">
-                        <option value="Fuerza">Fuerza</option>
-                        <option value="Destreza">Destreza</option>
-                        <option value="Constitución">Constitución</option>
-                        <option value="Inteligencia">Inteligencia</option>
-                        <option value="Sabiduría">Sabiduría</option>
-                        <option value="Carisma">Carisma</option>
-                    </select>
+                    <div class="numbers">
+                        <h1 id="number1">0</h1>
+                        <h1 id="number2">0</h1>
+                        <h1 id="number3">0</h1>
+                        <h1 id="number4">0</h1>
+                        <h1 id="number5">0</h1>
+                        <h1 id="number6">0</h1>
+                    </div>
+                    <button class="lanzar-dados" id="primerLanzamiento">lanza los dados</button>
+
+                    <p>Agrega cada valor a una casilla como lo prefieras</p>
+                    <div class="asignandoStats">
+                        <div class="stat">
+                            <label for="" class="fuerza">Fuerza</label>
+                            <input type="text" id="fuerza" placeholder="Fuerza" class="inputStat">
+                        </div>
+                        <div class="stat">
+                            <label for="" class="destreza">Destreza</label>
+                            <input type="text" id="destreza" placeholder="Destreza" class="inputStat">
+                        </div>
+                        <div class="stat">
+                            <label for="" class="constitución">Constitución</label>
+                            <input type="text" id="constitucion" placeholder="Constitución" class="inputStat">
+                        </div>
+                        <div class="stat">
+                            <label for="" class="inteligencia">Inteligencia</label>
+                            <input type="text" id="inteligencia" placeholder="Inteligencia" class="inputStat">
+                        </div>
+                        <div class="stat">
+                            <label for="" class="sabiduria">Sabiduria</label>
+                            <input type="text" id="sabiduria" placeholder="Sabiduria" class="inputStat">
+                        </div>
+                        <div class="stat">
+                            <label for="" class="carisma">Carisma</label>
+                            <input type="text" id="carisma" placeholder="Carisma" class="inputStat">
+                        </div>
+                    </div>
                 </div>
 
+
+
+            </div>
+            <div class="seleccion crearBtn">
+                <button id="crear">Crear Nuevo Personaje</button>
             </div>
         </form>
     </div>
@@ -87,7 +107,7 @@
 
     <!-- script -->
     <script src="/Tercera-Preentrega/main.js"></script>
-    <script src="/Tercera-Preentrega/objetos.js"></script>
+    <script src="/Tercera-Preentrega/objetosPersonaje.js"></script>
 
 
 </body>

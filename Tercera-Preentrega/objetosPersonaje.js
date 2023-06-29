@@ -1,5 +1,16 @@
+//obtejo personaje
+class Personaje {
+    constructor(nombre, objetoRaza, objetoClase, objetoStats) {
+        this.nombre = nombre;
+        this.objetoRaza = objetoRaza;
+        this.objetoClase = objetoClase;
+        this.objetoStats = objetoStats;
+    }
+};
+
+
 //objeto stats
-class Stats {
+class Stat {
     constructor(str, dex, con, int, wis, cha) {
         this.str = str;
         this.dex = dex;
@@ -35,14 +46,3 @@ const enano = new Raza("Reinos ricos en antiguo esplendor, salas esculpidas en l
 const elfo = new Raza("Los elfos son un pueblo mágico de gracia sobrenatural, viviendo en el mundo sin ser del todo parte de él. Viven en lugares de etérea belleza, en medio de antiguos bosques o en plateados minaretes que resplandecen con luz feérica, donde una suave música flota en el aire y delicadas fragancias son transportadas por la brisa. Los elfos aman la naturaleza y la magia, el arte y la maestría, la música y la poesía, y las cosas buenas del mundo.", 1, "Mediano", 30, "común y elfico")
 
 const razas = [humano, enano, elfo]
-
-
-//obtejo personaje
-class Personaje {
-    constructor(nombre, objetoRaza, objetoClase, objetoStats) {
-        this.nombre = nombre;
-        this.objetoRaza = objetoRaza;
-        this.objetoClase = objetoClase;
-        this.objetoStats = objetoStats;
-    }
-};
