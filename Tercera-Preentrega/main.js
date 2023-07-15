@@ -1,7 +1,16 @@
 //variables
 const formCrear = document.querySelector(".personaje-form");
-const number = document.querySelector(".number")
 let dadosStat = document.querySelector(".lanzar-dados")
+
+const nombre = document.getElementById("char-name").value;
+const raza = document.getElementById("raza").value;
+const clase = document.getElementById("clase").value;
+const fuerza = parseInt(document.getElementById("fuerza").value);
+const destreza = parseInt(document.getElementById("destreza").value);
+const constitucion = parseInt(document.getElementById("constitucion").value);
+const inteligencia = parseInt(document.getElementById("inteligencia").value);
+const sabiduria = parseInt(document.getElementById("sabiduria").value);
+const carisma = parseInt(document.getElementById("carisma").value);
 
 const dados = [4, 6, 8, 10, 12, 20]
 
@@ -65,16 +74,6 @@ dadosStat.addEventListener("click", (e) => {
 
 //Funcion Crear nuevo personaje
 function crearPersonaje() {
-    const nombre = document.getElementById("char-name").value;
-    const raza = document.getElementById("raza").value;
-    const clase = document.getElementById("clase").value;
-    const fuerza = parseInt(document.getElementById("fuerza").value);
-    const destreza = parseInt(document.getElementById("destreza").value);
-    const constitucion = parseInt(document.getElementById("constitucion").value);
-    const inteligencia = parseInt(document.getElementById("inteligencia").value);
-    const sabiduria = parseInt(document.getElementById("sabiduria").value);
-    const carisma = parseInt(document.getElementById("carisma").value);
-
     const stat = new Stat(fuerza, destreza, constitucion, inteligencia, sabiduria, carisma);
     const personaje = new Personaje(nombre, raza, clase, stat);
 
@@ -85,23 +84,38 @@ function crearPersonaje() {
         personajesExistentes = [];
     }
 
-
     personajesExistentes.push(personaje);
-
 
     localStorage.setItem("personajes", JSON.stringify(personajesExistentes));
 }
 
 
 
-crear.addEventListener("click", (e) => {
-    e.preventDefault()
+crear.addEventListener("click", () => {
 
-    crearPersonaje()
 
-    formCrear.reset()
+    if (nombre == "" || raza == "" || clase == "" || fuerza == NaN || destreza == NaN || constitucion == NaN || inteligencia == NaN || sabiduria == NaN || carisma == NaN) {
+        // alert("Asegurate de llenar todas las casillas");
+        Swal.fire(
+            'Ooops!',
+            'Asegurate de llenar todas las casillas',
+            'error'
+        )
+    } else {
+        crearPersonaje()
 
-    setTimeout(() => {
-        location.assign("./index.html")
-    }, 300);
+        formCrear.reset()
+
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Tu personaje ha sido creado',
+            showConfirmButton: false,
+            timer: 1400
+        })
+
+        setTimeout(() => {
+            location.assign("./index.html")
+        }, 1500);
+    }
 })
